@@ -6,3 +6,150 @@
   box-sizing: border-box;
   font-family: "Kumbh Sans", sans-serif;
 }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.img img {
+  display: block;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+}
+
+.article-preview {
+  padding: 32px 32px 0;
+}
+
+.article-preview h1 {
+  font-size: 16px;
+  color: #48556a;
+  margin-bottom: 12px;
+}
+
+.article-preview p {
+  font-size: 13px;
+  font-weight: 200;
+  color: #6e8098;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 22px 32px;
+  position: relative;
+}
+
+.author {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  align-items: center;
+}
+
+.author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.author-details p {
+  font-size: 13px;
+  color: #48556a;
+}
+
+.author-details span {
+  font-size: 13px;
+  color: #9daec2;
+}
+
+.share-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
+.share-img img {
+  pointer-events: none;
+  display: block;
+}
+
+.share-bar-desktop,
+.share-bar-mobile {
+  background-color: #48556a;
+  text-transform: uppercase;
+  color: #9daec2;
+  gap: 16px;
+  font-size: 13px;
+  align-items: center;
+  flex: 1;
+}
+
+.share-bar-mobile {
+  padding: 10px 0;
+  display: none;
+  width: 100%;
+}
+
+.share-bar-desktop {
+  display: flex;
+  position: absolute;
+  top: -45px;
+  padding: 18px 32px;
+  border-radius: 12px;
+  transition: 0.3s ease all;
+  opacity: 0;
+}
+
+/* active share (mobile) */
+.active-share-mobile {
+  background-color: #48556a;
+  border-radius: 0 0 12px 12px;
+}
+
+.active-share-mobile .author {
+  display: none;
+}
+
+.active-share-mobile .share-bar-mobile {
+  display: flex;
+}
+
+/* active share (Desktop) */
+.active-share-desktop .share-bar-desktop {
+  opacity: 1;
+}
+
+/* Desktop */
+@media (min-width: 750px) {
+  .card {
+    flex-direction: row;
+    max-width: 750px;
+  }
+
+  .img img {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 12px 0 0 12px;
+  }
+}
