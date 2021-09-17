@@ -6,3 +6,280 @@
   box-sizing: border-box;
   font-family: "Kumbh Sans", sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  background-image: url("./imgs/bg-pattern.svg");
+  background-repeat: no-repeat;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  margin: 104px 0 92px;
+}
+
+.title h1 {
+  font-size: 22px;
+  color: #293356;
+  margin-bottom: 12px;
+}
+
+.title h2 {
+  color: #848ead;
+  font-size: 13px;
+}
+
+.title img {
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.pricing-card {
+  max-width: 540px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.pricing {
+  padding: 40px 48px 56px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+  margin-bottom: 32px;
+}
+
+.price h1 {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #848ead;
+}
+
+.price p {
+  display: flex;
+  align-items: center;
+  color: #848ead;
+}
+
+.slider-value {
+  font-size: 40px;
+  margin-right: 8px;
+  color: #293356;
+}
+
+.slider-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background-color: #ecf0fb;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  z-index: 3;
+  position: relative;
+  cursor: pointer;
+}
+
+.selector {
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  top: -13px;
+  width: 50px;
+  height: 50px;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.select-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #10d8c4;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.slider-filled {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #10d8c4;
+  width: 50%;
+}
+
+.billing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #848ead;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  position: relative;
+  transform: rotate(90deg);
+  border: none;
+  background-color: #cfd8ef;
+  outline: none;
+  width: 43px;
+  height: 22px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 0.5s ease-in-out all;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input:checked[type="checkbox"]:before {
+  left: 26px;
+}
+
+.yearly {
+  position: relative;
+}
+
+.tag {
+  position: absolute;
+  top: 22px;
+  left: -7px;
+  display: block;
+  min-width: 90px;
+  padding: 3px 6px;
+  background-color: #feede8;
+  color: #ff8d68;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+hr {
+  border: 1px solid #ecf0fb;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 24px;
+  padding: 32px 48px;
+}
+
+.features {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+button {
+  cursor: pointer;
+  padding: 12px 46px;
+  color: #becdff;
+  background-color: #293356;
+  border-radius: 20px;
+  border: none;
+}
+
+/* Desktop */
+
+@media (min-width: 540px) {
+  .title h1 {
+    font-size: 28px;
+  }
+
+  .title h2 {
+    font-size: 15px;
+  }
+
+  .title img {
+    top: -50%;
+  }
+
+  .pricing {
+    padding: 40px 48px;
+  }
+
+  .price {
+    flex-direction: row;
+    margin-bottom: 24px;
+  }
+
+  .price p {
+    margin-left: auto;
+  }
+
+  .billing {
+    flex-direction: row;
+  }
+
+  input[type="checkbox"] {
+    transform: rotate(0);
+  }
+
+  .tag {
+    top: -2px;
+    left: 75px;
+  }
+
+  .cta {
+    flex-direction: row;
+  }
+
+  .features {
+    align-items: flex-start;
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
